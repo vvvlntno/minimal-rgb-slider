@@ -18,6 +18,11 @@ export default class RGBSlider extends Component<{}, State> {
         }
     }
 
+    public getValues() {
+        const { red, green, blue } = this.state;
+        return { red, green, blue };
+    }
+
     render() {
         const {red, green, blue} = this.state;
         return (

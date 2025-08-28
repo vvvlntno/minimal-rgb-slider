@@ -1,13 +1,12 @@
-"use client";
 import React, { useEffect, useState } from 'react';
 
-type SavedColorsProps = {};
+type SavedColorsProps = { refreshKey?: number | string };
 
 function addLeadingZeros(num: number): string {
     return num.toString().padStart(3, '0');
 }
 
-export type Color = {
+type Color = {
 	id: number;
 	red: number;
 	green: number;
@@ -15,7 +14,7 @@ export type Color = {
 	name: string;
 };
 
-const SavedColors: React.FC<SavedColorsProps> = () => {
+const SavedColors: React.FC<SavedColorsProps> = ({ refreshKey }) => {
 	const [error, setError] = useState<string | null>(null);
     const [colorData, setColorData] = useState<Color[]>([]);
 
@@ -39,7 +38,7 @@ const SavedColors: React.FC<SavedColorsProps> = () => {
 		};
 
 		fetchColors();
-	}, []);
+	}, [refreshKey]);
 
 	if (error) {
 		return (
