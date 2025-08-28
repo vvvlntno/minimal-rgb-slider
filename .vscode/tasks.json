@@ -16,7 +16,23 @@
             "runOptions": {
                 "runOn": "folderOpen"
             }
-        }
+        },
+        {
+            "label": "NPM Dev Server (frontend)",
+            "type": "shell",
+            "command": "npm",
+            "args": [
+                "run",
+                "dev"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/src/frontend",
+            },
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
     ]
 }
 

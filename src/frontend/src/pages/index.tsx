@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import RGBSlider from "../../components/rgbslider";
+import SavedColors from "../../components/savedcolors";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +18,13 @@ export default function Home() {
       className={`${geistSans.className} ${geistMono.className} font-sans flex flex-col items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
     >
       <RGBSlider/>
+      <hr />
+      <div className="flex flex-col">
+        <p className="text-xl font-bold tracking-wide">Gespeicherte Farben</p>
+        <div className="flex flex-col gap-10">
+          <SavedColors/>
+        </div>
+      </div>
     </div>
   );
 }
